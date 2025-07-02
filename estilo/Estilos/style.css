@@ -136,8 +136,8 @@ header{
   padding: 20px 4%;
 }
 div.logomarca img{
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     display: flex;
     align-items:end;
 }
@@ -145,6 +145,8 @@ header > .interface{
     display:flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 3;
+    position: relative;
 }
 header a{
     color: black;
@@ -194,11 +196,22 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 230px; /* ajuste conforme necessário */
+    height: 200px;/* ajuste conforme necessário */
     position: relative;
     z-index: 1;
     color: white; /* se o texto for claro */
 }
+header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* altura da transição */
+  background: linear-gradient(to bottom, transparent, #313131);
+  z-index: 2;
+}
+
 /*Slider da Empresa*/
 .slider {
   width: 100vw;
@@ -229,10 +242,11 @@ header {
   pointer-events: none;
 }
 .slide {
-  transition: 2s;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   width: 100vw;
   height: 100vh;
   position: relative;
+  
 }
 
 .slide img {
@@ -241,7 +255,7 @@ header {
   object-fit: cover;
   position: relative;
   z-index: 1;
-  display: block;
+  background-attachment: fixed;
 }
 
 .manual-navigation {
@@ -325,12 +339,11 @@ header {
 .slide-text {
   position: absolute;
   color: white;
-  z-index: 10;
-  padding: 15px 25px;
-  max-width: 350px;
+  top: 40%;
+  left: 30%;
+  z-index: 2;
   font-family: 'Poppins', sans-serif;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.5); /* para teste */
 }
 
 .slide-text h2 {
