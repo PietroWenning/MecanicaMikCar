@@ -115,7 +115,11 @@
    scroll-behavior: smooth;
 }
 :root{
-    --corprincipa:
+  --corprincipal: #C62828;
+  --corsecundaria: #EF5350;
+  --corfundo: #FFFFFF;
+  --cortexto: #212121; /* Cor do texto */
+  --secoesoucontornos:#F5F5F5;
 
 }
 body{
@@ -149,10 +153,12 @@ header > .interface{
     position: relative;
 }
 header a{
-    color: black;
+    color: var(--cortexto);
     text-decoration: none;
-    font-size: 20px;
-    transition: 0.5s;
+    font-size: 23px;
+   position: relative;
+   padding: 2px 0;
+   
 
 }
 header nav ul {
@@ -162,11 +168,19 @@ header nav ul li{
   display: inline-block;
   padding: 0px 40px;
 }
-header a:hover{
-  text-decoration: underline;
-  text-decoration-color:rgb(177, 1, 1) ;
-  font-size: 22px;
-  transform: scale(1,5);
+header nav a::after{
+  content: " ";
+  width: 0%;
+  height: 4px; 
+  background-color: var(--corprincipal);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s ease-in-out ;
+}
+header nav a:hover::after{
+  width: 100%;
+  
 }
 
 button{
@@ -208,7 +222,7 @@ header::after {
   left: 0;
   width: 100%;
   height: 100px; /* altura da transição */
-  background: linear-gradient(to bottom, transparent, #313131);
+  background: linear-gradient(to bottom, transparent, #0000008e);
   z-index: 2;
 }
 
@@ -222,6 +236,7 @@ header::after {
 }
 
 .slides{
+ 
   width: 400%;
   height: 670px;
   display: flex;
@@ -237,12 +252,13 @@ header::after {
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+  background: linear-gradient(to top, transparent, #000000e8);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.377), rgba(0, 0, 0, 0.466));
   z-index: 1;
   pointer-events: none;
 }
 .slide {
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -269,14 +285,14 @@ header::after {
 }
 
 .manual-btn {
-  border: 2px solid #fff;
+  border: 2px solid var(--secoesoucontornos);
   padding: 6px;
   border-radius: 50%;
   cursor: pointer;
 }
 
 .manual-btn:hover {
-  background-color: #fff;
+  background-color: var(--secoesoucontornos);
 }
 
 .manual-btn:not(:last-child)
@@ -300,7 +316,7 @@ header::after {
 }
 
 .navigation-auto {
-  border-radius:1px solid red;
+  border-radius:1px solid var(--corsecundaria);
   position: absolute;
   bottom: 20px; /* mesma altura das bolinhas manuais */
   left: 50%;
@@ -311,7 +327,7 @@ header::after {
 }
 
 .navigation-auto div {
-  border: 2px solid red;
+  border: 2px solid var(--corsecundaria);
   padding: 6px;
   border-radius: 50%;
   cursor: pointer;
