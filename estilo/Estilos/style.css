@@ -116,10 +116,12 @@
 }
 :root{
   --corprincipal: #C62828;
-  --corsecundaria: #EF5350;
+  --corsecundaria: #ea5350;
   --corfundo: #FFFFFF;
   --cortexto: #212121; /* Cor do texto */
   --secoesoucontornos:#F5F5F5;
+  --CorWhatsapp: #25D366;
+  --corbotaohover: #22b458;
 
 }
 body{
@@ -183,7 +185,7 @@ header nav a:hover::after{
   
 }
 
-button{
+div.btn-contato button{
   background-image: linear-gradient(to right, #25D366,#22b458);
   padding: 16px;text-align: center;
   font-size: 20px;
@@ -193,13 +195,30 @@ button{
   cursor: pointer;
   transition: 0.3s;
   color: white;
-  text-decoration: none;
+     text-decoration: none;-webkit-animation: pulse 2s infinite;
+ animation: pulse512 1.5s infinite;
 }
-button:hover{
+
+@keyframes pulse512 {
+ 0% {
+  box-shadow: 0 0 0 0 #08a3039c;
+ }
+
+ 70% {
+  box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+ }
+
+ 100% {
+  box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+ }
+}
+
+ div.btn-contato button:hover{
    box-shadow:  1px 1px 1px 1px #15D366;
    transform: scale(1.1);
    font-weight: bold;
    text-decoration: none;
+   
 }
 i{padding: 10px;
   font-size: 25px;
@@ -253,7 +272,7 @@ header::after {
   width: 100%;
   height: 100%;
   background: linear-gradient(to top, transparent, #000000e8);
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.377), rgba(0, 0, 0, 0.466));
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.726));
   z-index: 1;
   pointer-events: none;
 }
@@ -348,6 +367,7 @@ header::after {
 #radio4:checked ~ .navigation-auto .auto-btn4{
   background-color: white;
 }
+/*Texto dos Slides*/
 .slide {
   position: relative;
 }
@@ -355,22 +375,193 @@ header::after {
 .slide-text {
   position: absolute;
   color: white;
-  top: 40%;
-  left: 30%;
+  top: 20%;
+  left: 28%;
   z-index: 2;
   font-family: 'Poppins', sans-serif;
   text-align: center;
 }
-
+.slide-text h1 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 4.0rem;
+  color: var(--corprincipal);
+}
 .slide-text h2 {
-  margin-bottom: 8px;
+  margin-bottom:8px;
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 2.1rem;
+}
+.slide-text h2 span {
+  color: var(--corsecundaria);
+  position: 
+  relative;
+  padding: 2px 0;
+}
+.slide-text h2 span::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-color: var(--corsecundaria);
+  bottom: 2px; /* Ajuste a posição conforme necessário */
+  left: 0;
+}
+.TextoTrasparente {
+  background: rgba(0, 0, 0, 0.6); /* fundo escuro com transparência */
+  color: white;
+  padding: 30px 20px;
+  border-radius: 50px;
+  font-size: 22px;
+  text-align: center;
+  max-width: 700px;
+  margin:0 auto;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  box-shadow: 0 0 15px rgba(102, 102, 102, 0.4);
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3; /* acima do texto da imagem */
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  line-height: 1.5;
+  transition: all 0.3s ease;
+
+}
+.TextoTrasparente .verde {
+  color: var(--CorWhatsapp);
+  font-weight: 600;
+}
+div.TextoTrasparente p {
+  margin: 0;
+  font-size: 25px;
+  line-height: 1.5;
+  text-align: center;
+  padding: 0 20px; /* Adiciona espaçamento interno */
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+div.bnt-contato2 button{
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3; /* acima do texto da imagem */
+  padding: 15px;
+  text-align: center;
+  font-size: 20px;
+  border-radius:20px ;
+  font-weight: bolder;
+  border: none;
+  background-color: var(--CorWhatsapp);
+  color: white;
+}
+div.bnt-contato2 button:hover{
+  background-image: linear-gradient(to , #69be88,#11853b);
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transform: translateX(-50%) scale(1.05);
+  transition: all 0.3s ease;
 }
 
-.slide-text p {
-  font-size: 1.1rem;
+/* From Uiverse.io by wilsondesouza */ 
+ul {
+  list-style: none;
 }
 
+.example-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+z-index: 1000;
+position: absolute;
+  top: 90px;
+  right:90px;
+}
+.example-2 .icon-content {
+  margin: 0 10px;
+  
+}
+.example-2 .icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+.example-2 .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #4d4d4d;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+.example-2 .icon-content a svg {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+}
+.example-2 .icon-content a:hover {
+  color: white;
+}
+.example-2 .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover .filled {
+  height: 100%;
+}
 
+.example-2 .icon-content a[data-social="whatsapp"] .filled,
+.example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
+  background-color: #128c7e;
+}
 
+.example-2 .icon-content a[data-social="facebook"] .filled,
+.example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
+  background-color: #3b5998;
+}
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5b51db,
+    #b33ab4,
+    #c135b4,
+    #e1306c,
+    #fd1f1f
+  );
+}
+.example-2 .icon-content a[data-social="youtube"] .filled,
+.example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+  background-color: #ff0000;
+}
