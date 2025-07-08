@@ -664,7 +664,7 @@ div.servicos:hover {
    div.TextoTrasparente2 {
       background: rgba(0, 0, 0, 0.363); /* fundo escuro com transparência */
   color: white;
-  padding: 30px 20px;
+  padding: 40px 30px;
   border-radius: 50px;
   font-size: 22px;
   text-align: center;
@@ -681,14 +681,16 @@ div.servicos:hover {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.281);
   line-height: 1.5;
   transition: all 0.3s ease;
-   }
-   div.TextoTrasparente2 > button {
+  text-decoration: none;
+   } 
+   
+   div.bnt-contato3 > button {
   position: absolute;
   top: 65%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3; /* acima do texto da imagem */
-  padding: 15px;
+  padding: 10px;
   text-align: center;
   font-size: 20px;
   border-radius: 20px;
@@ -697,4 +699,130 @@ div.servicos:hover {
   background-color: var(--CorWhatsapp);
   color: white;
   transition: all 0.3s ease;
+  text-decoration: none;
    }
+    div.bnt-contato3 > button i
+    {
+      text-decoration: none;
+    }
+   div.bnt-contato3 > button p {
+    margin: 0px;
+    padding: 0px  ;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+
+   } 
+   div.bnt-contato3 > button i {
+    margin-right: 10px;
+    color: white;
+    font-size: 25px;
+   }
+
+   div.carrosel {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    border-radius: 10px;
+   }
+   .carrosel::after{
+    content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+   }
+   .carrosels{
+    width: 400%;
+    height: 900px;
+    display: flex;
+   }
+    .carrosels input {
+      display: none;
+    }
+
+.carrosel-item{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.carrosel-item img {
+  width: 100%;
+  height:100%;
+  position: relative;
+  z-index: 1;
+}
+.manual-carrosel {
+      position: absolute;
+      bottom: 20px; /* distância do rodapé da imagem */
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px; /* espaço entre as bolinhas */
+      z-index: 2; /* acima do overlay da imagem */
+    }
+#carrosel1:checked ~ .first{
+  margin-left : 0;
+}
+#carrosel2:checked ~ .first{
+  margin-left : -25%;
+}
+#carrosel3:checked ~ .first{
+  margin-left : -50%;
+}
+#carrosel4:checked ~ .first{
+  margin-left : -75%;
+}
+#carrosel5:checked ~ .first{
+  margin-left : -100%;
+}
+#carrosel6:checked ~ .first{
+  margin-left : -125%;
+}
+#carrosel7:checked ~ .first{
+  margin-left : -150%;
+}
+.manual-carrosel{
+  position: absolute;
+  bottom: 20px; /* mesma altura das bolinhas manuais */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 2;
+}
+
+.manual-carrosel-btn:hover {
+  background-color: var(--secoesoucontornos);
+}
+.manual-carrosel-btn:not(:last-child) {
+  margin-right: 40px;
+}
+.carrosel-auto div:not(:last-child){
+  margin-right: 40px;
+}
+#carrosel1:checked ~ .carrosel-auto .carrosel-btn1{
+  background-color: white;
+}
+#carrosel2:checked ~ .carrosel-auto .carrosel-btn2{
+  background-color: white;
+}
+#carrosel3:checked ~ .carrosel-auto .carrosel-btn3{
+  background-color: white;
+}
+#carrosel4:checked ~ .carrosel-auto .carrosel-btn4{
+  background-color: white;
+}
+#carrosel5:checked ~ .carrosel-auto .carrosel-btn5{
+  background-color: white;
+}
+#carrosel6:checked ~ .carrosel-auto .carrosel-btn6{
+  background-color: white;
+}
+#carrosel7:checked ~ .carrosel-auto .carrosel-btn7{
+  background-color: white;
+}
