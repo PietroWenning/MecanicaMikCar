@@ -23,15 +23,16 @@ function Mostrarparagrafo(botao) {
     setTimeout(() => paragrafo.classList.add('mostrar'), 10);
   }
 }
-let carrosel = 1;
-document.getElementById("carrosel1").checked = true;
-setInterval(function() {
-  nextCarrosel();
-}, 8000);
-function nextCarrosel() {
-  carrosel++;
-  if (carrosel > 7) {
-    carrosel = 1;
-  }
-  document.getElementById("carrosel" + carrosel).checked = true;
-}
+document.addEventListener("DOMContentLoaded", function () {
+  let carrosel = 1;
+  document.getElementById("carrosel1").checked = true;
+
+  setInterval(function () {
+    carrosel++;
+    if (carrosel > 7) {
+      carrosel = 1;
+    }
+    document.getElementById("carrosel" + carrosel).checked = true;
+  }, 8000);
+});
+
