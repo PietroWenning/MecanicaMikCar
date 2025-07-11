@@ -163,7 +163,7 @@ header a{
  
     color: var(--cortexto);
     text-decoration: none;
-    font-size: 23px;
+    font-size: 19px;
    position: relative;
    padding: 2px 0;
   gap: 20px;
@@ -195,7 +195,7 @@ header nav a:hover::after{
 div.btn-contato button{
   background-image: linear-gradient(to right, #25D366,#22b458);
   padding: 16px;text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   border-radius: 40px;
   font-weight: bold;
   border: none;
@@ -674,7 +674,7 @@ div.servicos:hover {
   font-weight: 400;
   box-shadow: 0 0 15px rgba(102, 102, 102, 0.4);
   position: absolute;
-  top: 120%; 
+  top: 130%; 
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 3; /* acima do texto da imagem */
@@ -683,10 +683,14 @@ div.servicos:hover {
   transition: all 0.3s ease;
   text-decoration: none;
    } 
+div.TextoTrasparente2 p {
+  padding: 10px 20px;
+  
+  }
    
    div.bnt-contato3 > button {
   position: absolute;
-  top: 65%;
+  top: 70%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3; /* acima do texto da imagem */
@@ -709,6 +713,8 @@ div.servicos:hover {
     margin: 0px;
     padding: 0px  ;
     color: white;
+  text-align: justify;
+
     text-decoration: none;
     display: inline-block;
 
@@ -754,7 +760,7 @@ display: block;
 
 .manual-carrosel {
   position: absolute;
-  bottom: 20px;
+ bottom: 320px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
