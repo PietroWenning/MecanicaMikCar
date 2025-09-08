@@ -228,12 +228,10 @@ div.btn-contato button{
    text-decoration: none;
    
 }
-i{padding: 10px;
-  font-size: 25px;
-}
+
 header {
     padding: 20px 4%;
-    background:url('/Imagens/Outras/wallpaper005.jpg');
+    background:url('Imagens/Outras/wallpaper005.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
