@@ -142,7 +142,7 @@ body{
 /*Cabeçalho*/
 /* Interface do header */
 header{
-   background: url('./Imagens/Outras/wallpaper005.jpg') no-repeat center/cover;
+   background: url('Imagens/Outras/wallpaper005.jpg') no-repeat center/cover;
 }
 header .interface {
   display: flex;
@@ -774,7 +774,7 @@ div.bnt-contato3 button:hover{
 
 /* Carrossel de Imagens */
 .marcas-atendidas {
-  background-image: url("./Imagens/Outras/wallpaper004.jpg");
+  background-image: url("Imagens/Outras/wallpaper004.jpg");
   height: 900px;
   width: 100%;position: relative;
 background-position: center;
@@ -1332,8 +1332,8 @@ display: block;
 .section-background {
   position: relative;
   width: 100%;
-  height: 100vh; 
-  background: url('./Imagens/Outras/fundoVerde.png') center center / cover no-repeat;
+  height: 90vh; 
+  background: url('Imagens/Outras/fundoVerde.png') center center / cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1354,17 +1354,42 @@ display: block;
   position: relative;
   z-index: 2; /* garante que tudo apareça acima do overlay */
 }
-
-
+/*rodapé*/
 footer {
-  background-color: var(--corsecundaria);
-  color: var(--cortexto);
+  background-color: var(--cortexto);
+  color: white;
   text-align: center;
-  padding: 20px 0;
+  padding: 20px 10px;
   font-size: 14px;
-  margin-top: 40px;
+  width: 100%;
   box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  margin-top: 40px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  box-sizing: border-box;
+
+
 }
+footer i{
+  color: white;
+  margin: 0 5px;
+  font-size: 20px;
+
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+footer a:hover {
+  text-decoration: underline; 
+}
+
+
 
     
     
