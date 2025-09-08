@@ -235,10 +235,10 @@ header {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 200px;/* ajuste conforme necessário */
+    height: 200px;
     position: relative;
     z-index: 1;
-    color: white; /* se o texto for claro */
+    color: white; 
 }
 header::after {
   content: "";
@@ -246,7 +246,7 @@ header::after {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px; /* altura da transição */
+  height: 100px; 
   background: linear-gradient(to bottom, transparent, #0000008e);
   z-index: 2;
 }
@@ -259,25 +259,64 @@ header::after {
     left: 10px;
 
     font-size: 100px;}
-  .menu-mobile {
-    background-color: #1a1a1a;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 9999;
-    width: 0;
-    overflow-x: hidden;
-    transition: width 0.4s ease;
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
-    color: white;
-  }
-  .menu-mobile.abrir-menu {
-    width: 70%;
-    z-index: 9999;
-  }
+  /* 1. Menu móvel (drawer) com maior prioridade */
+.menu-mobile {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100vh;
+  background-color: #1a1a1a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 20px;
+  overflow-x: hidden;
+  transition: width 0.4s ease;
+  z-index: 99999 !important; /* força ficar acima de tudo */
+}
+
+.menu-mobile.abrir-menu {
+  width: 70%;
+}
+
+/* 2. Overlay escuro nos 30% restantes */
+.overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: none; /* aparece junto com o menu */
+  z-index: 99998 !important; /* logo abaixo do menu */
+}
+
+/* 3. Forçar slider, header e seus elementos para trás */
+header, .slider, .slide, .slide::after, .manual-navigation, .navigation-auto {
+  z-index: 1 !important;
+}
+
+/* 4. Links e ícones sociais dentro do menu */
+.menu-mobile nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0;
+}
+
+.menu-mobile nav ul li a {
+  color: #fff;
+  font-size: 20px;
+  padding: 15px 20px;
+  display: block;
+  text-decoration: none;
+}
+
+.menu-mobile nav ul li a:hover {
+  background-color: #c62828;
+  color: #000;
+}
   .menu-mobile .btn-fechar {
     align-self: flex-end;
     padding: 10px 20px;
@@ -286,31 +325,6 @@ header::after {
   .menu-mobile .btn-fechar i {
     font-size: 30px;
     color: #c62828;
-  }
-  .menu-mobile nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0 0 0;
-  }
-  .menu-mobile nav ul li a {
-    color: #fff;
-    font-size: 20px;
-    padding: 15px 20px;
-    display: block;
-    text-decoration: none;
-  }
-  .menu-mobile nav ul li a:hover {
-    background-color: #c62828;
-    color: #000;
-  }
-  .overlay-menu {
-    background-color: rgba(0,0,0,0.6);
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0; left: 0;
-    z-index: 8888;
-    display: none;
   }
   @media (max-width: 1020px) {
     nav.menu-desktop {
@@ -330,7 +344,7 @@ header::after {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  position: relative;
+ position: relative;
   margin: 0 auto;
 }
 
@@ -367,10 +381,8 @@ header::after {
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
   position: relative;
   z-index: 1;
-  background-attachment: fixed;
 }
 
 .manual-navigation {
@@ -813,7 +825,7 @@ div.bnt-contato3 button:hover{
   width: 100%;position: relative;
 background-position: center;
 background-repeat: no-repeat;
-background-size: cover;
+
   
 }
 .carrosel {
