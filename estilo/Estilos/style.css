@@ -295,7 +295,105 @@ nav.menu-desktop a:hover::after {
     display: block;
   }
 }
+ul {
+  list-style: none;
+}
 
+.example-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+z-index:4;
+position: absolute;
+  top: 90px;
+  right:90px;
+}
+.example-2 .icon-content {
+  margin: 0 10px;
+  
+}
+.example-2 .icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+.example-2 .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #4d4d4d;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+.example-2 .icon-content a svg {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+}
+.example-2 .icon-content a:hover {
+  color: white;
+}
+.example-2 .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover .filled {
+  height: 100%;
+}
+
+.example-2 .icon-content a[data-social="whatsapp"] .filled,
+.example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
+  background-color: #128c7e;
+}
+
+.example-2 .icon-content a[data-social="facebook"] .filled,
+.example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
+  background-color: #3b5998;
+}
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5b51db,
+    #b33ab4,
+    #c135b4,
+    #e1306c,
+    #fd1f1f
+  );
+}
+.example-2 .icon-content a[data-social="youtube"] .filled,
+.example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+  background-color: #ff0000;
+}
 
 /*Slider da Empresa*/
 .slider {
@@ -513,107 +611,6 @@ div.bnt-contato2 button:hover{
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
   transform: translateX(-50%) scale(1.05);
   transition: all 0.3s ease;
-}
-
-/* From Uiverse.io by wilsondesouza */ 
-ul {
-  list-style: none;
-}
-
-.example-2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-z-index: 1;
-position: absolute;
-  top: 90px;
-  right:90px;
-}
-.example-2 .icon-content {
-  margin: 0 10px;
-  
-}
-.example-2 .icon-content .tooltip {
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #fff;
-  padding: 6px 10px;
-  border-radius: 5px;
-  opacity: 0;
-  visibility: hidden;
-  font-size: 14px;
-  transition: all 0.3s ease;
-}
-.example-2 .icon-content:hover .tooltip {
-  opacity: 1;
-  visibility: visible;
-  top: -50px;
-}
-.example-2 .icon-content a {
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  color: #4d4d4d;
-  background-color: #fff;
-  transition: all 0.3s ease-in-out;
-}
-.example-2 .icon-content a:hover {
-  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
-}
-.example-2 .icon-content a svg {
-  position: relative;
-  z-index: 1;
-  width: 30px;
-  height: 30px;
-}
-.example-2 .icon-content a:hover {
-  color: white;
-}
-.example-2 .icon-content a .filled {
-  position: absolute;
-  top: auto;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  background-color: #000;
-  transition: all 0.3s ease-in-out;
-}
-.example-2 .icon-content a:hover .filled {
-  height: 100%;
-}
-
-.example-2 .icon-content a[data-social="whatsapp"] .filled,
-.example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
-  background-color: #128c7e;
-}
-
-.example-2 .icon-content a[data-social="facebook"] .filled,
-.example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
-  background-color: #3b5998;
-}
-.example-2 .icon-content a[data-social="instagram"] .filled,
-.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
-  background: linear-gradient(
-    45deg,
-    #405de6,
-    #5b51db,
-    #b33ab4,
-    #c135b4,
-    #e1306c,
-    #fd1f1f
-  );
-}
-.example-2 .icon-content a[data-social="youtube"] .filled,
-.example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
-  background-color: #ff0000;
 }
 /*Serviços*/
 /* ======== SEÇÃO SERVIÇOS RESPONSIVA ======== */
@@ -1231,40 +1228,119 @@ display: block;
     } 
     /* Localização*/
     #localizacao {
-      padding: 50px 20px;
-    
-    }
-    .h1localizacao h1, .h1localizacao a {
-      text-align: center;
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-      color: var(--cortexto);
-      text-decoration: none;
-    }
-    .mapa-localizacao {
-      display: flex;
-      padding-left: 100px;
-      padding-right: 100px;
-      border-radius: 20px;
-      justify-content:left;
-      align-items: left;
-      width: 100%;
-      height: 450px;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    div.trasparente{
-      padding: 20px 50px 30px;
-      background: rgba(0, 0, 0, 0.3); /* Fundo preto com transparência */
-      width: 500px;
-      height: 150px;
-      border-radius: 20px;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-    
-    }
+  padding: 50px 20px;
+}
+
+.h1localizacao h1, .h1localizacao a {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: var(--cortexto);
+  text-decoration: none;
+}
+
+/* Container principal: lado a lado no desktop */
+.mapa-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px; /* espaço entre mapa e texto */
+  flex-wrap: wrap; /* permite quebrar linha em telas pequenas */
+}
+
+/* Mapa responsivo */
+.mapa-localizacao {
+  position: relative;
+  width: 600px; /* largura máxima no desktop */
+  max-width: 100%; /* responsivo */
+  padding-bottom: 20%; /* proporção 16:9 */
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.mapa-localizacao iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Caixa de texto ao lado */
+.trasparente {
+  padding: 20px 30px;
+  color: var(--cortexto);
+  max-width: 600px;
+  height:450px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid var(--corprincipal);
+  box-shadow:1px 1px 20px rgba(0,0,0,0.2);
+  transform: scale(1.5s);
+  cursor: pointer;
+  flex: 1 1 250px; 
+}
+.trasparente:hover{
+  box-shadow: 0 0 15px rgba(102, 102, 102, 0.4);
+
+  transform: scale(1.5s);
+}
+.trasparente p{
+  font-size: 25px;
+  line-height: 2.0rem;
+  text-shadow: 0 0 10px rgba(0,0,0,0.5);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: var(--cortexto);
+}
+.trasparente h1 {
+  color: var(--cortexto);
+
+  font-size: 40px;
+  padding: 20px;
+  font-family: 'Poppins', sans-serif;
+  line-height: 30px
+}
+
+/* Botão interno */
+.trasparente .btn-contato button {
+  margin-top: 10px;
+   background-image: linear-gradient(to right, #25D366,#22b458);
+    padding: 16px;text-align: center;
+    font-size: 18px; border-radius: 40px;
+    font-weight: bold; border: none;
+    cursor: pointer; transition: 0.3s;
+    color: white; text-decoration: none;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse512 1.5s infinite;
+}
+.section-background {
+  width: 100vh;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px 0;
+  color: white;
+  text-align: center;
+}
+
+footer {
+  background-color: var(--corsecundaria);
+  color: var(--cortexto);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  margin-top: 40px;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
     
     
       
@@ -1430,5 +1506,23 @@ display: block;
     padding-left: 20px;
     padding-right: 20px;
     height: 300px;
+  }
+  .example-2 {
+    flex-direction: column; /* empilha verticalmente */
+    top: auto;
+    right: 20px; /* ajusta posição se necessário */
+    bottom: 20px; /* coloca próximo da base da tela */
+  }
+  .example-2 .icon-content {
+    margin: 10px 0; /* espaçamento vertical entre os ícones */
+  }
+  .mapa-container {
+    flex-direction: column; /* empilha mapa e texto */
+    align-items: center;
+  }
+
+  .trasparente {
+    margin-top: 20px; /* distância do mapa */
+    max-width: 90%; /* ocupa quase toda a largura do celular */
   }
 }
