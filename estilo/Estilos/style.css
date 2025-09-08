@@ -810,7 +810,7 @@ div.bnt-contato3 button:hover{
 
 /* Carrossel de Imagens */
 .marcas-atendidas {
-  background-image: url('/Imagens/Outras/wallpaper004.jpg');
+  background-image: url('Imagens/Outras/wallpaper004.jpg');
   height: 900px;
   width: 100%;position: relative;
 background-position: center;
