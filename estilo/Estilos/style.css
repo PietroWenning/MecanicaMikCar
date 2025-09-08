@@ -231,7 +231,7 @@ div.btn-contato button{
 
 header {
     padding: 20px 4%;
-    background:url('Imagens/Outras/wallpaper004.jpg') ;
+    background:url('/Imagens/Outras/wallpaper005.jpg') ;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -808,7 +808,7 @@ div.bnt-contato3 button:hover{
 
 /* Carrossel de Imagens */
 .marcas-atendidas {
-  background-image: url('Imagens/Outras/wallpaper004.jpg');
+  background-image: url("/Imagens/Outras/wallpaper004.jpg");
   height: 900px;
   width: 100%;position: relative;
 background-position: center;
@@ -1286,8 +1286,15 @@ display: block;
     div.trasparente{
       padding: 20px 50px 30px;
       background: rgba(0, 0, 0, 0.3); /* Fundo preto com transparência */
+      width: 500px;
+      height: 150px;
+      border-radius: 20px;
+      text-align: center;
+      display: flex;
+      justify-content: center;
     
     }
+    
     
       
     /* ===================== MEDIA QUERIES PARA CELULAR ===================== */
@@ -1427,5 +1434,30 @@ display: block;
     top: auto;
     bottom: 20px;
     right: 10px;
+  }
+  .TextoTrasparente2{
+    width: 90%;
+    height: 200px;
+    padding: 20px;
+    font-size: 18px;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 20px auto;
+  }
+  div.trasparente{
+    width: 90%;
+    height: 150px;
+    padding: 20px;
+    font-size: 18px;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 20px auto;
+  }
+  .mapa-localizacao {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 300px;
   }
 }
