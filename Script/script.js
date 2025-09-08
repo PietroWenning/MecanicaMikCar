@@ -1,31 +1,24 @@
 // === MENU MOBILE ===
-let btnMenu = document.getElementById('btn-menu');
-let menu = document.getElementById('menu-mobile');
-let overlay = document.querySelector('.overlay-menu');
-let btnFechar = document.querySelector('.btn-fechar');
+const btnMenu = document.getElementById('btn-menu');
+const menuMobile = document.getElementById('menu-mobile');
+const overlay = document.querySelector('.overlay-menu');
+const btnFechar = document.querySelector('.menu-mobile .btn-fechar');
 
 btnMenu.addEventListener('click', () => {
-  menu.classList.add('abrir-menu');
+  menuMobile.classList.add('abrir-menu');
   overlay.style.display = 'block';
 });
 
 btnFechar.addEventListener('click', () => {
-  menu.classList.remove('abrir-menu');
+  menuMobile.classList.remove('abrir-menu');
   overlay.style.display = 'none';
 });
 
 overlay.addEventListener('click', () => {
-  menu.classList.remove('abrir-menu');
+  menuMobile.classList.remove('abrir-menu');
   overlay.style.display = 'none';
 });
 
-// Fechar menu ao clicar em um link
-menu.addEventListener('click', (e) => {
-  if (e.target.tagName === 'A') {
-    menu.classList.remove('abrir-menu');
-    overlay.style.display = 'none';
-  }
-});
 
 // === SLIDER AUTOMÁTICO ===
 let count = 1;

@@ -129,6 +129,7 @@ body{
     height: 100vh;
     font-family: 'Poppins', sans-serif;
     background-color: var(--corfundo);
+  ;
     
 }
 .interface{
@@ -140,126 +141,94 @@ body{
   
 }
 /*Cabeçalho*/
-
+/* Interface do header */
 header{
-  background-color: white;
+   background: url('/Imagens/Outras/wallpaper005.jpg') no-repeat center/cover;
+}
+header .interface {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 20px 4%;
-}
-div.logomarca img{
-    width: 200px;
-    height: 200px;
-    display: flex;
-    align-items:end;
-    
-}
-header > .interface{
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 3;
-    position: relative;
+  position: relative;
   
-}
-header a{
- 
-    color: var(--cortexto);
-    text-decoration: none;
-    font-size: 19px;
-   position: relative;
-   padding: 2px 0;
-  gap: 20px;
-   
-
-}
-header nav ul {
-    list-style-type: none;
-}
-header nav ul li{
-  display: inline-block;
-  padding: 0px 40px;
-}
-header nav a::after{
-  content: " ";
-  width: 0%;
-  height: 4px; 
-  background-color: var(--corprincipal);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  transition: 0.3s ease-in-out ;
-}
-header nav a:hover::after{
-  width: 100%;
-  
-}
-
-div.btn-contato button{
-  background-image: linear-gradient(to right, #25D366,#22b458);
-  padding: 16px;text-align: center;
-  font-size: 18px;
-  border-radius: 40px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
   color: white;
-     text-decoration: none;-webkit-animation: pulse 2s infinite;
- animation: pulse512 1.5s infinite;
+  height: 200px;
 }
 
-@keyframes pulse512 {
- 0% {
-  box-shadow: 0 0 0 0 #08a3039c;
- }
-
- 70% {
-  box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
- }
-
- 100% {
-  box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
- }
+/* Logo */
+.logomarca img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  display: block;
 }
 
- div.btn-contato button:hover{
-   box-shadow:  1px 1px 1px 1px #15D366;
-   transform: scale(1.1);
-   font-weight: bold;
-   text-decoration: none;
-   
+/* Menu Desktop */
+nav.menu-desktop ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
 }
 
-header {
-    padding: 20px 4%;
-    background:url('/Imagens/Outras/wallpaper005.jpg') ;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 200px;
-    position: relative;
-    z-index: 1;
-    color: white; 
+nav.menu-desktop a {
+  text-decoration: none;
+  color: var(--cortexto);
+  font-size: 19px;
+  position: relative;
 }
-header::after {
+
+nav.menu-desktop a::after {
   content: "";
+  width: 0;
+  height: 4px;
+  background: var(--corprincipal);
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100px; 
-  background: linear-gradient(to bottom, transparent, #0000008e);
-  z-index: 2;
+  transition: 0.3s;
 }
-/* Menu Mobile */
- #btn-menu {
-    display: none;
-  }
-  #btn-menu i {
-    top: auto;
-    left: 10px;
 
-    font-size: 100px;}
-  /* 1. Menu móvel (drawer) com maior prioridade */
+nav.menu-desktop a:hover::after {
+  width: 100%;
+}
+
+/* Botão contato */
+.btn-contato-link {
+    background-image: linear-gradient(to right, #25D366,#22b458);
+    padding: 16px;text-align: center;
+    font-size: 18px; border-radius: 40px;
+    font-weight: bold; border: none;
+    cursor: pointer; transition: 0.3s;
+    color: white; text-decoration: none;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse512 1.5s infinite;
+}
+@keyframes pulse512 {
+  0% { 
+    box-shadow: 0 0 0 0 #08a3039c; 
+  }
+ 70% {
+   box-shadow: 0 0 0 10px rgb(218 103 68 / 0%); 
+  }
+ 
+ 100% {
+   box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+   } 
+}
+
+.btn-contato-link:hover {
+  box-shadow: 1px 1px 1px 1px #15D366; transform: scale(1.1); font-weight: bold; text-decoration: none;
+}
+
+/* Menu Mobile */
+#btn-menu {
+  display: none;
+  font-size: 30px;
+  color: var(--corprincipal);
+  cursor: pointer;
+}
+
 .menu-mobile {
   position: fixed;
   top: 0;
@@ -267,49 +236,25 @@ header::after {
   width: 0;
   height: 100vh;
   background-color: #1a1a1a;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-top: 20px;
-  overflow-x: hidden;
-  transition: width 0.4s ease;
-  z-index: 99999 !important; /* força ficar acima de tudo */
+  overflow: hidden;
+  transition: width 0.3s;
+  z-index: 9999;
 }
 
 .menu-mobile.abrir-menu {
   width: 70%;
 }
 
-/* 2. Overlay escuro nos 30% restantes */
-.overlay-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.6);
-  display: none; /* aparece junto com o menu */
-  z-index: 99998 !important; /* logo abaixo do menu */
-}
-
-/* 3. Forçar slider, header e seus elementos para trás */
-header, .slider, .slide, .slide::after, .manual-navigation, .navigation-auto {
-  z-index: 1 !important;
-}
-
-/* 4. Links e ícones sociais dentro do menu */
 .menu-mobile nav ul {
   list-style: none;
-  padding: 0;
-  margin: 40px 0;
+  padding: 50px 20px;
 }
 
 .menu-mobile nav ul li a {
+  display: block;
   color: #fff;
   font-size: 20px;
-  padding: 15px 20px;
-  display: block;
+  padding: 15px 0;
   text-decoration: none;
 }
 
@@ -317,27 +262,40 @@ header, .slider, .slide, .slide::after, .manual-navigation, .navigation-auto {
   background-color: #c62828;
   color: #000;
 }
-  .menu-mobile .btn-fechar {
-    align-self: flex-end;
-    padding: 10px 20px;
-    cursor: pointer;
+
+.menu-mobile .btn-fechar {
+  padding: 10px;
+  cursor: pointer;
+  text-align: right;
+}
+
+.menu-mobile .btn-fechar i {
+  font-size: 30px;
+  color: #c62828;
+}
+
+/* Overlay */
+.overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  z-index: 9998;
+}
+
+/* Responsivo */
+@media (max-width: 1020px) {
+  nav.menu-desktop {
+    display: none;
   }
-  .menu-mobile .btn-fechar i {
-    font-size: 30px;
-    color: #c62828;
+  #btn-menu {
+    display: block;
   }
-  @media (max-width: 1020px) {
-    nav.menu-desktop {
-      display: none;
-    }
-    #btn-menu {
-      display: block;
-      font-size: 30px;
-      color: #c62828;
-      cursor: pointer;
-      padding: 10px 20px;
-    }
-  }
+}
+
 
 /*Slider da Empresa*/
 .slider {
@@ -566,7 +524,7 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-z-index: 1000;
+z-index: 1;
 position: absolute;
   top: 90px;
   right:90px;
@@ -825,6 +783,7 @@ div.bnt-contato3 button:hover{
   width: 100%;position: relative;
 background-position: center;
 background-repeat: no-repeat;
+background-size: cover;
 
   
 }
