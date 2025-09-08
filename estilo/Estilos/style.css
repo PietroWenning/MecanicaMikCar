@@ -126,7 +126,6 @@
 }
 body{
    overflow-x: hidden;
-    height: 100vh;
     font-family: 'Poppins', sans-serif;
     background-color: var(--corfundo);
   ;
@@ -143,7 +142,7 @@ body{
 /*Cabeçalho*/
 /* Interface do header */
 header{
-   background: url('/Imagens/Outras/wallpaper005.jpg') no-repeat center/cover;
+   background: url('./Imagens/Outras/wallpaper005.jpg') no-repeat center/cover;
 }
 header .interface {
   display: flex;
@@ -775,7 +774,7 @@ div.bnt-contato3 button:hover{
 
 /* Carrossel de Imagens */
 .marcas-atendidas {
-  background-image: url("/Imagens/Outras/wallpaper004.jpg");
+  background-image: url("./Imagens/Outras/wallpaper004.jpg");
   height: 900px;
   width: 100%;position: relative;
 background-position: center;
@@ -1244,16 +1243,17 @@ display: block;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px; /* espaço entre mapa e texto */
-  flex-wrap: wrap; /* permite quebrar linha em telas pequenas */
+  gap: 20px;
+  flex-wrap: wrap;
+  z-index: 2; /* garante que fique sobre a imagem */
 }
 
 /* Mapa responsivo */
 .mapa-localizacao {
   position: relative;
-  width: 600px; /* largura máxima no desktop */
-  max-width: 100%; /* responsivo */
-  padding-bottom: 20%; /* proporção 16:9 */
+  width: 600px;
+  max-width: 100%;
+  padding-bottom: 56.25%; /* proporção 16:9 */
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -1268,68 +1268,93 @@ display: block;
   border: 0;
 }
 
-/* Caixa de texto ao lado */
+/* Caixa de texto */
 .trasparente {
   padding: 20px 30px;
-  color: var(--cortexto);
   max-width: 600px;
-  height:450px;
+  min-height: 350px;
   border-radius: 20px;
   text-align: center;
-  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border: 1px solid var(--corprincipal);
-  box-shadow:1px 1px 20px rgba(0,0,0,0.2);
-  transform: scale(1.5s);
+  box-shadow: 1px 1px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   cursor: pointer;
-  flex: 1 1 250px; 
+  flex: 1 1 250px;
+  background: rgba(0,0,0,0.5); /* fundo semi-transparente p/ legibilidade */
 }
-.trasparente:hover{
-  box-shadow: 0 0 15px rgba(102, 102, 102, 0.4);
 
-  transform: scale(1.5s);
+.trasparente:hover {
+  box-shadow: 0 0 15px rgba(102, 102, 102, 0.4);
+  transform: scale(1.01);
 }
-.trasparente p{
-  font-size: 25px;
-  line-height: 2.0rem;
+
+.trasparente p {
+  font-size: 22px;
+  line-height: 1.8rem;
   text-shadow: 0 0 10px rgba(0,0,0,0.5);
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  color: var(--cortexto);
+  color: #FFFFFF;
 }
-.trasparente h1 {
-  color: var(--cortexto);
 
-  font-size: 40px;
-  padding: 20px;
+.trasparente h1 {
+  color: #FFFFFF;
+  font-size: 36px;
+  padding: 10px;
   font-family: 'Poppins', sans-serif;
-  line-height: 30px
+  line-height: 1.3;
 }
 
 /* Botão interno */
 .trasparente .btn-contato button {
-  margin-top: 10px;
-   background-image: linear-gradient(to right, #25D366,#22b458);
-    padding: 16px;text-align: center;
-    font-size: 18px; border-radius: 40px;
-    font-weight: bold; border: none;
-    cursor: pointer; transition: 0.3s;
-    color: white; text-decoration: none;
-    -webkit-animation: pulse 2s infinite;
-    animation: pulse512 1.5s infinite;
-}
-.section-background {
-  width: 100vh;
-  height: 400px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding: 50px 0;
+  margin-top: 15px;
+  background-image: linear-gradient(to right, #25D366,#22b458);
+  padding: 14px 24px;
+  font-size: 18px;
+  border-radius: 40px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
   color: white;
-  text-align: center;
+  text-decoration: none;
+  animation: pulse512 1.5s infinite;
 }
+
+.trasparente .btn-contato button:hover {
+  transform: scale(1.05);
+}
+
+/* Fundo da seção */
+.section-background {
+  position: relative;
+  width: 100%;
+  height: 100vh; 
+  background: url('/Imagens/Outras/fundoVerde.png') center center / cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+/* overlay opcional */
+.section-background::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+}
+
+.section-background > * {
+  position: relative;
+  z-index: 2; /* garante que tudo apareça acima do overlay */
+}
+
 
 footer {
   background-color: var(--corsecundaria);
@@ -1355,12 +1380,11 @@ footer {
     text-align: left;
   }
   header {
-    padding: 15px 3%;
+    padding: 5px 20px;
     height: auto;
     background-size: cover;
   }
- .menu-desktop,
-  .btn-contato {
+.menu-desktop{
     display: none;
   }
   header .interface {
@@ -1370,8 +1394,13 @@ footer {
   }
 
   .logomarca img {
-    width: 150px;
+    width: 140px;
     height: auto;
+    top: 0;
+    transform: none;
+    margin: 0;
+    padding: 0;
+    
   }
 
   nav.menu-desktop ul {
@@ -1392,14 +1421,14 @@ footer {
 
   /* Slider */
   .slide-text {
-    top: 15%;
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 16px;
+    width: 90%;
   }
 
   .slide-text h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .slide-text h2 {
@@ -1407,26 +1436,19 @@ footer {
   }
 
   .TextoTrasparente {
-    font-size: 10px;
-    padding: 20px 15px;
-    top: 530px;
-    width:300px;
-    height:350px;
+    padding: 30px 10px;
+    top: 410px;
+    width:80%;
+    height: 300px;
   }
-  .TextoTrasparente p{
-    font-size: 14px;
-   
+  .TextoTrasparente > p{
+    font-size: 18px;
+
   }
 
-  .bnt-contato2  {
-    font-size: 16px;
-    padding: 10px 18px;
-    width: 150px;
-    height: 100px;
-    display: inline-block;
-    top: 1000px;
+  .bnt-contato2 a  {
+    font-size: 10px
   }
-
   /* Seção Serviços */
   div.container-servicos {
     flex-direction: column; /* Uma coluna no celular */
@@ -1449,6 +1471,9 @@ footer {
   div.servicos button {
     font-size: 14px;
     padding: 10px 15px;
+  }
+  .bnt-contato3{
+    margin-top: 20px;
   }
   /* Sobre nós */
   .sobre-nos-content {
@@ -1516,13 +1541,36 @@ footer {
   .example-2 .icon-content {
     margin: 10px 0; /* espaçamento vertical entre os ícones */
   }
-  .mapa-container {
+
+   .mapa-container {
     flex-direction: column; /* empilha mapa e texto */
     align-items: center;
   }
 
+  .mapa-localizacao,
   .trasparente {
-    margin-top: 20px; /* distância do mapa */
-    max-width: 90%; /* ocupa quase toda a largura do celular */
+    width: 90%; /* ocupa quase toda a largura da tela */
+    max-width: 500px;
+  }
+
+  .trasparente {
+    min-height: auto; /* altura se ajusta ao conteúdo */
+    padding: 20px;
+  }
+
+  .trasparente h1 {
+    font-size: 20px;
+    padding: 10px 0;
+    line-height: 1.3;
+  }
+
+  .trasparente p {
+    font-size: 15px;
+    line-height: 1rem;
+  }
+
+  .trasparente .btn-contato button {
+    font-size: 16px;
+    padding: 12px 20px;
   }
 }
