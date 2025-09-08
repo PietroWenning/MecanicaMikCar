@@ -1333,7 +1333,7 @@ display: block;
   position: relative;
   width: 100%;
   height: 100vh; 
-  background: url('/Imagens/Outras/fundoVerde.png') center center / cover no-repeat;
+  background: url('./Imagens/Outras/fundoVerde.png') center center / cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
