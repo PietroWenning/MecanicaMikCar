@@ -527,8 +527,9 @@ position: fixed;
 .slide-text {
   position: absolute;
   color: white;
-  top: 20%;
-  left: 28%;
+  top: 10%;
+  left: 25%;
+  padding-right:100px ;
   z-index: 2;
   font-family: 'Poppins', sans-serif;
   text-align: center;
@@ -597,8 +598,8 @@ div.TextoTrasparente p {
 }
 div.bnt-contato2 button{
   position: absolute;
-  top: 65%;
   left: 50%;
+  top: 570px;
   transform: translateX(-50%);
   z-index: 3; /* acima do texto da imagem */
   padding: 15px;
@@ -1402,9 +1403,39 @@ footer a:hover {
       
     /* ===================== MEDIA QUERIES PARA CELULAR ===================== */
     @media (max-width: 1620px) {
+    .slide-text{
+        text-align: center;
+        justify-content: center;
+        flex-direction: column;
+        display: flex;
+        position: absolute;
+        padding: right 40px;
+        top: 5%;
+        
+      }
+      .slide-text h2 {
+  margin-bottom:8px;
+  font-weight: 700;
+  font-size: 2.1rem;
+  text-align: center;
+}
+      div.TextoTrasparente {
+        width: 600px;
+        font-size: 20px;
+        height: 20px;
+        padding: 5px 10px;
+        display: block;
+      }
       div.TextoTrasparente p{
         font-size: 22px;
       
+      }
+      div.bnt-contato2 button  {
+        font-size: 18px;
+        padding: 12px 18px;
+       top: 450px;
+       left: 50%;
+       z-index: 3;
       }
       .slide-text h1 {
   margin-bottom: 20px;
@@ -1491,9 +1522,20 @@ div.TextoTrasparente{
   }
 
   /* Slider */
+  .slider {
+    height: 470px;
+  }
+.slides{
+  height: 470px;
+  width: 400%;
+}
+  .slide img {
+    height: 470px;
+    object-fit: cover;
+  }
   .slide-text {
-    top: 10%;
-    left: 50%;
+    top: 5%;
+    left: 55%;
     transform: translateX(-50%);
     width: 90%;
   }
@@ -1508,18 +1550,25 @@ div.TextoTrasparente{
 
   .TextoTrasparente {
     padding: 20px 10px;
-    top: 410px;
-    width:80%;
-    height: 500px;
+    top: 300px;
+    width:90%;
     font-size: 5px;
+    display: block;;
   }
   div.TextoTrasparente p{
     font-size: 18px;
   }
-  
+  div.bnt-contato2 button{
+    margin-top: 20px;
+    left: 50%;
+    top: 330px;
+   }
 
   .bnt-contato2 a  {
-    font-size: 10px
+    font-size: 10px;
+    top: 200px;
+    left: 50%;
+  display: inline-block;
   }
   /* Seção Serviços */
   div.container-servicos {
@@ -1678,9 +1727,9 @@ div.TextoTrasparente{
   }
 
   .TextoTrasparente {
-    top: 350px;
+    top: 250px;
     font-size: 16px;
-    height: auto;
+    height: 200px;
   }
   .TextoTrasparente > p{
     font-size: 16px;
