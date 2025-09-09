@@ -1229,7 +1229,7 @@ display: block;
 /* ===================== LOCALIZAÇÃO ===================== */
     /* Localização*/
     #localizacao {
-
+      padding-top: 20px;
     }
 
 .h1localizacao h1, .h1localizacao a {
