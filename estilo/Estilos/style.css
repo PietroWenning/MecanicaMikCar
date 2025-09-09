@@ -173,7 +173,7 @@ nav.menu-desktop ul {
 nav.menu-desktop a {
   text-decoration: none;
   color: var(--cortexto);
-  font-size: 19px;
+  font-size: 16px;
   position: relative;
 }
 
@@ -195,10 +195,14 @@ nav.menu-desktop a:hover::after {
 /* Botão contato */
 .btn-contato-link {
     background-image: linear-gradient(to right, #25D366,#22b458);
-    padding: 16px;text-align: center;
-    font-size: 18px; border-radius: 40px;
-    font-weight: bold; border: none;
-    cursor: pointer; transition: 0.3s;
+    padding: 16px;
+    text-align: center;
+    font-size: 16px;
+     border-radius: 40px;
+    font-weight: bold;
+     border: none;
+    cursor: pointer;
+     transition: 0.3s;
     color: white; text-decoration: none;
     -webkit-animation: pulse 2s infinite;
     animation: pulse512 1.5s infinite;
@@ -300,12 +304,13 @@ ul {
 
 .example-2 {
   display: flex;
-  justify-content: center;
+ flex-direction: column;
   align-items: center;
-z-index:4;
-position: absolute;
-  top: 90px;
-  right:90px;
+z-index:888;
+position: fixed;
+  bottom: 30px;
+  gap: 10px;
+  right:40px;
 }
 .example-2 .icon-content {
   margin: 0 10px;
@@ -1142,93 +1147,90 @@ display: block;
     }
 
     /* Container das avaliações */
-    .testimonial-box-container {
+
+    .testimonial-box-container{
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 25px;
+      align-items: center;
+      width: 100%;
     }
-
-    .testimonial-box {
-      position: relative;
+    .testimonial-box{
+      width: 500px;
+      box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+      background-color: #ffffff;
+      padding: 20px;
+      margin: 15px;
+      cursor:pointer;
+    }
+    .profile-img{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
       overflow: hidden;
-      border-radius: 15px;
+      margin-bottom: 10px;
     }
+    .profile-img img{
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center
+      ;
+    }
+    .name-user{
+      display: flex;
+      flex-direction: column;
+    }
+    .name-user strong{
+      color: #3d3d3d;
+      font-size: 18px;  
+      letter-spacing: 0,5px;
+    }
+    .name-user span{
+      font-size: 14px;
+      color: #979797;
+    }
+    .reviews{
+    
+      color:#f9d71c ;
 
-    .testimonial-box img {
-      width: 800px;
-      border-radius: 20px;
-      display: block;
     }
-
-    /* ========= EFEITO 1: Zoom + Brilho + Borda ========= */
-    .effect1{
-      padding: 30px;
+    .box-top{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
     }
-    .effect1 img {
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease, border 0.4s ease;
+    .client-comment p{
+      font-size: 16px;
+      color: #555;
+      line-height: 1.5;
     }
-
-    .effect1 img:hover {
+    .testimonial-box:hover {
+      box-shadow: 0 0 15px rgba(102, 102, 102, 0.4);
       transform: scale(1.02);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-      filter: brightness(1.05) saturate(1.2);
-      border: 2px solid var(--corprincipal);
+      transition: all 0.3s ease-in-out;
     }
-
-    /* ========= EFEITO 2: Tilt (balanço) ========= */
-    .effect2{
-      padding: 30px 20px;
-    }
-    .effect2 img {
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease, border 0.4s ease;
-    }
-
-    .effect2 img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-      filter: brightness(1.05) saturate(1.2);
-      border: 2px solid var(--corprincipal);
-    }
+    .total{
+      text-align: center;
+      margin-top: 20px;
 
 
-    /* ========= EFEITO 3: Overlay com Texto ========= */
-   .effect3{
-      padding: 30px 20px;
     }
-
-    .effect3 img {
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease, border 0.4s ease;
+    .total h1{
+      font-weight: bold;
+      font-size: 50px;
     }
-
-    .effect3 img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-      filter: brightness(1.05) saturate(1.2);      border: 2px solid var(--corprincipal);
+    .total span{
+      font-size: 20px;
+      color: #555;
     }
-
-    /* ========= EFEITO 4: Glow (Brilho nas Bordas) ========= */
-     .effect4{
-      padding: 30px 20px;
-    }
-    .effect4 img {
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease, border 0.4s ease;
-    }
-
-    .effect4 img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-      filter: brightness(1.05) saturate(1.2);
-      border: 2px solid var(--corprincipal);
-    } 
+/* ===================== LOCALIZAÇÃO ===================== */
     /* Localização*/
     #localizacao {
   padding: 50px 20px;
-}
+    }
 
 .h1localizacao h1, .h1localizacao a {
   text-align: center;
@@ -1333,7 +1335,7 @@ display: block;
   position: relative;
   width: 100%;
   height: 90vh; 
-  background: url('Imagens/Outras/fundoVerde.png') center center / cover no-repeat;
+  background: url('../Imagens/Outras/fundoVerde.png') center center / cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1408,6 +1410,7 @@ footer a:hover {
     padding: 5px 20px;
     height: auto;
     background-size: cover;
+    
   }
 .menu-desktop{
     display: none;
@@ -1522,10 +1525,10 @@ footer a:hover {
   }
 
   /* Avaliações */
-  .testimonial-box img {
+  .testimonial-box{
     width: 90%;
+    padding: 8px;
   }
-
   /* Footer ou elementos flutuantes */
   .example-2 {
     top: auto;
@@ -1598,4 +1601,149 @@ footer a:hover {
     font-size: 16px;
     padding: 12px 20px;
   }
+
 }
+@media(max-width: 790px) {
+  .testimonial-box{
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+  }
+  .testimonial-heading h1 {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 480px) {
+  /* Header */
+  .logomarca img {
+    width: 120px;
+  }
+
+  .btn-contato button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  /* Slider */
+  .slide-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .slide-text h2 {
+    font-size: 1rem;
+  }
+
+  .TextoTrasparente {
+    top: 350px;
+    font-size: 16px;
+    height: auto;
+  }
+  .TextoTrasparente > p{
+    font-size: 16px;
+
+  }
+  .bnt-contato2 a  {
+    font-size: 14px
+  }
+  /* Seção Serviços */
+  div.servicos h3 {
+    font-size: 14px;
+  }
+  div.servicos p {
+    font-size: 12px;
+  }
+  div.servicos button {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+  /* Sobre nós */
+  .sobre-nos-title {
+    font-size: 1.5rem;
+  }
+  .sobre-nos-subtitle {
+    font-size: 1rem;
+  }
+  .sobre-nos-main-title {
+    font-size: 1.25rem;
+  }
+  .sobre-nos-paragraph {
+    font-size: 0.875rem;
+  }
+  .sobre-nos-stat-number {
+    font-size: 1.25rem;
+  }
+  .sobre-nos-stat-label {
+    font-size: 0.75rem;
+  }
+  /* Carrossel Marcas */
+  .container {
+    width: 90%;
+  }
+  .item {
+    width: clamp(40px, 20vw, 60px);
+    height: clamp(40px, 20vw, 60px);
+  }
+  /* Avaliações */
+  .testimonial-heading h1 {
+    font-size: 1.2rem;
+  }
+  .testimonial-heading span {
+    font-size: 1rem;
+  }
+  .testimonial-box{
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+  }
+  .client-comment p{
+    font-size: 14px;
+  }
+  .name-user strong{
+    font-size: 16px;  
+  }
+  .name-user span{
+    font-size: 12px;
+  }
+  /* Texto Transparente 2 */
+
+  .TextoTrasparente2{
+    width: 90%;
+    height: auto;
+    padding: 15px;
+    font-size: 16px;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 20px auto;
+  }
+  /* Localização */
+  .h1localizacao h1, .h1localizacao a {
+    font-size: 1.5rem;
+  }
+  .mapa-localizacao {
+    height: 200px;
+  }
+  .trasparente h1 {
+    font-size: 18px;
+  }
+  .trasparente p {
+    font-size: 14px;
+    line-height: 1.2rem;
+  }
+  .trasparente .btn-contato button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+  /* Footer ou elementos flutuantes */
+  .example-2 {
+    flex-direction: column; /* empilha verticalmente */
+    top: auto;
+    right: 10px; /* ajusta posição se necessário */
+    bottom: 10px; /* coloca próximo da base da tela */
+  }
+  .example-2 .icon-content {
+    margin: 8px 0; /* espaçamento vertical entre os ícones */
+  }
+}
+
+
