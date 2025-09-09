@@ -586,7 +586,7 @@ position: fixed;
   font-weight: 600;
 }
 div.TextoTrasparente p {
-  margin: 0;
+  margin: 0, auto;
   font-size: 25px;
   line-height: 1.5;
   text-align: center;
@@ -1401,6 +1401,31 @@ footer a:hover {
     
       
     /* ===================== MEDIA QUERIES PARA CELULAR ===================== */
+    @media (max-width: 1620px) {
+      div.TextoTrasparente p{
+        font-size: 22px;
+      
+      }
+      .slide-text h1 {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 50px;
+  display: block;
+  color: var(--corprincipal);
+}
+.slide-text h2 {
+  margin-bottom:8px;
+  font-weight: 700;
+  font-size: 30px;
+}
+div.TextoTrasparente{
+  width: 600px;
+  font-size: 20px;
+  height: 100px;
+  width: 90%;
+}
+
+    }
 @media (max-width: 1020px) {
 
   /* Header */
@@ -1411,12 +1436,16 @@ footer a:hover {
     text-align: left;
   }
   header {
-    padding: 5px 20px;
     height: auto;
     background-size: cover;
+    position: sticky;
+    top: 0;
+    height: 110px;
+    z-index: 1000;
     
   }
-.menu-desktop{
+.menu-desktop, .btn-contato-link
+{
     display: none;
   }
   header .interface {
@@ -1424,14 +1453,24 @@ footer a:hover {
     align-items: center;
     gap: 10px;
   }
+  #btn-menu {
+    display: block;
+    position: absolute;
+    top: 45px;
+    right: 20px;
+    font-size: 50px;
+    cursor: pointer;
+    z-index: 1001;
+  }
 
   .logomarca img {
-    width: 140px;
-    height: auto;
-    top: 0;
-    transform: none;
+    width: 100px;
+    height: 120px;
+    display: block;
+   right: 100px;
     margin: 0;
     padding: 0;
+    position: relative;
     
   }
 
@@ -1468,15 +1507,16 @@ footer a:hover {
   }
 
   .TextoTrasparente {
-    padding: 30px 10px;
+    padding: 20px 10px;
     top: 410px;
     width:80%;
-    height: 300px;
+    height: 500px;
+    font-size: 5px;
   }
-  .TextoTrasparente > p{
+  div.TextoTrasparente p{
     font-size: 18px;
-
   }
+  
 
   .bnt-contato2 a  {
     font-size: 10px
