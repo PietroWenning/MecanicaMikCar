@@ -752,11 +752,10 @@ div.servicos button:hover {
 div.bnt-contato3 button{
   position: absolute;
   transform: translateX(-50%);
-  z-index: 3; /* acima do texto da imagem */
+  z-index: 5; /* acima do texto da imagem */
   padding: 15px 20px;
-  text-align: center;
   font-size: 20px;
-  border-radius:20px ;
+  border-radius:30px ;
   font-weight: bolder;
   border: none;
   background-color: var(--CorWhatsapp);
@@ -1561,7 +1560,8 @@ div.TextoTrasparente{
   div.bnt-contato2 button{
     margin-top: 20px;
     left: 50%;
-    top: 330px;
+    top: 310px;
+    height: 50px;
    }
 
   .bnt-contato2 a  {
@@ -1705,6 +1705,16 @@ div.TextoTrasparente{
   .testimonial-heading h1 {
     font-size: 1.4rem;
   }
+  div.slide-text{
+    left: 60%;
+  }
+  .TextoTrasparente{
+    width: 80%;
+    margin-top: 20px;
+  }
+  div.TextoTrasparente p{
+    font-size: 16px;
+  }
 }
 @media (max-width: 480px) {
   /* Header */
@@ -1718,6 +1728,9 @@ div.TextoTrasparente{
   }
 
   /* Slider */
+  div.slide-text{
+    left: 65%;
+  }
   .slide-text h1 {
     font-size: 1.8rem;
   }
@@ -1726,13 +1739,18 @@ div.TextoTrasparente{
     font-size: 1rem;
   }
 
-  .TextoTrasparente {
+  div.TextoTrasparente {
     top: 250px;
-    font-size: 16px;
-    height: 200px;
+    font-size: 10px;
+    height: 100px;
+    margin-top: 30px;
   }
   .TextoTrasparente > p{
     font-size: 16px;
+
+  }
+  div.bnt-contato2 button{
+    height: 60px;margin-top: 30px;
 
   }
   .bnt-contato2 a  {
@@ -1803,15 +1821,20 @@ div.TextoTrasparente{
     width: 90%;
     height: auto;
     padding: 15px;
-    font-size: 16px;
-    top: auto;
+    font-size: 15px;
+    top: -40px;
     left: auto;
     transform: none;
     margin: 20px auto;
   }
+  div.bnt-contato3 button{
+    padding: 8px;
+    top: 120px;
+    font-size: 16px;
+  }
   /* Localização */
   .h1localizacao h1, .h1localizacao a {
-    font-size: 1.5rem;
+    font-size: 40px;
   }
   .mapa-localizacao {
     height: 200px;
