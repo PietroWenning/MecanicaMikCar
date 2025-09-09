@@ -142,7 +142,7 @@ body{
 /*Cabeçalho*/
 /* Interface do header */
 header{
-   background: url('Imagens/Outras/wallpaper005.jpg') no-repeat center/cover;
+   background: url('../../Imagens/Outras/wallpaper005.jpg') no-repeat center/cover;
 }
 header .interface {
   display: flex;
@@ -779,7 +779,7 @@ div.bnt-contato3 button:hover{
 
 /* Carrossel de Imagens */
 .marcas-atendidas {
-  background-image: url("Imagens/Outras/wallpaper004.jpg");
+  background-image: url("../../Imagens/Outras/wallpaper004.JPG");
   height: 900px;
   width: 100%;position: relative;
 background-position: center;
@@ -1335,7 +1335,7 @@ display: block;
   position: relative;
   width: 100%;
   height: 90vh; 
-  background: url('../Imagens/Outras/fundoVerde.png') center center / cover no-repeat;
+  background: url('../../Imagens/Outras/FundoVerde.png') center center / cover no-repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
